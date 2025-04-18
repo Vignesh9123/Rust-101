@@ -1,10 +1,8 @@
 fn main() {
-    // _numbers();
-    booleans();
-    strings();
+    numbers();
 }
 
-fn _numbers(){
+fn numbers(){
     let int32bit = 1000; // Default size of number without explicit specification is i32 -> 32 bits
     print!("32 bit int is: {}", int32bit);
     print!("\n");
@@ -22,37 +20,4 @@ fn _numbers(){
     println!("64 bit float is: {}", float64bit);
     
     // Note that f8 doesn't exist and f16 is unstable
-}
-
-
-fn booleans(){
-    let truebool: bool = true;
-    println!("True bool val is {}", truebool);
-    let falsebool: bool = false;
-    println!("False bool val is {}", falsebool);
-    
-    let orval: bool = truebool || falsebool;
-    println!("Or bool val is {}", orval);
-    
-    let andval: bool = truebool && falsebool;
-    println!("And bool val is {}", andval);
-}
-
-fn strings(){
-    let mut str = String::from("Hello");
-    str.push_str(" Hey");
-    println!("String is {}", str); // Hello Hey
-    
-    let str1 = "Hello world"; // Cannot be mutated even if mut is specified
-    println!("String is {}", str1);
-
-    /*
-    Feature | &str | String
-  Ownership | No | Yes
-    Mutable | No | Yes (mut)
-Heap Allocation | No | Yes
-Use case | Borrow/Read-only string | Owned, growable string
-Example | "hello" | String::from("hello")
-     */
-
 }
