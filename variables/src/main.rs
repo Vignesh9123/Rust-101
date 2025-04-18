@@ -46,6 +46,15 @@ fn strings(){
     let str1 = "Hello world"; // Cannot be mutated even if mut is specified
     println!("String is {}", str1);
 
+
+    let c = str1.chars().nth(0);
+    // Notice that c is of type option<char> over here and not char, because rust compiler doesn't know whether there is an actual char in 0th index, This is solved through pattern matching or unwrap(less strict)
+    print!("Char is {}", c.unwrap()); // Will throw a runtime error if char is not present at that index
+    // Pattern matching
+    match c {
+        Some(char1)=>println!("\nMatched char is {}",char1),
+        None => println!("No Char at this index")
+    }
     /*
     Feature | &str | String
   Ownership | No | Yes
