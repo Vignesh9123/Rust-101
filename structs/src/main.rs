@@ -29,12 +29,16 @@ fn main(){
     };
     user2.has_a_gf = Some(true); // This is valid as user2 is mutable
 
-    print!("Name:{:?}\nInitial:{:?}\nAge:{:?}\nActive:{:?}\nHas a Gf:{}\nIsAdult:{}", user.name,user.initial, user.age, user.active, user.has_a_gf.unwrap_or(false), user.is_adult() ); // :? adds a double quote around if it's a string or single quote if its a char that is being printed, remains same for other datatypes
+    print!("Name:{:?}\nInitial:{:?}\nAge:{:?}\nActive:{:?}\nHas a Gf:{}\nIsAdult:{}\nStatic func:{}", user.name,user.initial, user.age, user.active, user.has_a_gf.unwrap_or(false), user.is_adult(), User::return1() /*Remember that a static function is called on the struct not on its instance */ ); // :? adds a double quote around if it's a string or single quote if its a char that is being printed, remains same for other datatypes
 }
 
 impl User { // Implementation of Structs
     fn is_adult(&self) -> bool{
         if self.age < 18 {return false;}
         else {return true;}
+    }
+
+    fn return1() -> i32{ // if &self is not present in the parameters of the function it is similar to a static function in JS classes
+        1
     }
 }
