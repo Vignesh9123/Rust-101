@@ -1,5 +1,3 @@
-use core::num;
-
 fn main() {
     let mut vec = Vec::new();
     vec.push(1);
@@ -32,7 +30,7 @@ fn main() {
     vec.remove(0);
     println!("{:?}", vec); // [2]
     
-    let numbers = vec![1,2,3];
+    let numbers = vec![1,2,3]; // using vec macro
     println!("{:?}", numbers); // [1, 2, 3]
 
 }

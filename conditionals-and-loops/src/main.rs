@@ -24,12 +24,12 @@ fn main() {
     
     // for loop
     for i in 1..10{
-        print!("{}", i); // prints 0 - 9
+        print!("{}", i); // prints 1 - 9
     }
 
     let string: String = String::from("Hello World");
     for c in string.chars(){
-        print!("\n{}", c);
+        print!("{}", c);
     }
     
     // while loop
